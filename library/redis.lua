@@ -212,14 +212,20 @@ if len == nil then len = '*l' end
 local line, err = client.network.socket:receive(len)
 if not err then return line else
 print("\27[36m"..[[                                           
- _____ _____ ___   _ ____  
-|_   _| ____| |  / \  | \ | |  _ \ 
-  | | |  _| | | / _ \ |  \| | | | |
-  | | | |___| |___ / ___ \| |\  | |_| |
-  |_| |_____|_____/_/   \_\_| \_|____/
-> CH › @IIIS1
-> CH › @SIRIATEAM
-~> DEVELOPER › @VVVZVV
+ echo "  ██████  ██▓ ██▀███   ██▓ ▄▄▄      ";
+echo "▒██    ▒ ▓██▒▓██ ▒ ██▒▓██▒▒████▄    ";
+echo "░ ▓██▄   ▒██▒▓██ ░▄█ ▒▒██▒▒██  ▀█▄  ";
+echo "  ▒   ██▒░██░▒██▀▀█▄  ░██░░██▄▄▄▄██ ";
+echo "▒██████▒▒░██░░██▓ ▒██▒░██░ ▓█   ▓██▒";
+echo "▒ ▒▓▒ ▒ ░░▓  ░ ▒▓ ░▒▓░░▓   ▒▒   ▓▒█░";
+echo "░ ░▒  ░ ░ ▒ ░  ░▒ ░ ▒░ ▒ ░  ▒   ▒▒ ░";
+echo "░  ░  ░   ▒ ░  ░░   ░  ▒ ░  ░   ▒   ";
+echo "      ░   ░     ░      ░        ░  ░";
+echo "                                    ";
+  
+> CH › @siria100
+> CH › @siria100
+~> DEVELOPER › @siria100
 ]]..'\27[m')
 Info = dofile("Info.lua")
 User = Info.User
