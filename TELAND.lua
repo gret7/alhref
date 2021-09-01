@@ -5908,6 +5908,80 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 ------------------------------------------------------------------------ امـيـر الـدلـيـم
+if text == ("تخ") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ✭ لا تستطيع استخدام البوت \n ✭  يرجى الاشتراك بالقناه اولا \n ✭  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
+send(msg.chat_id_, msg.id_,' ✭ تم تعطيل القتل') 
+return false
+end
+function start_function(extra, result, success)
+database:sadd(bot_id..'Zahf:User'..msg.chat_id_, result.sender_user_id_)
+tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
+usertext = '\n ✭ الـعـضو   ⇇['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+local  statuss  = '\n ✭تم قتله بنجاح\n'
+send(msg.chat_id_, msg.id_, usertext..statuss)
+end,nil)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
+end
+
+if text == ("بوم") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ◉ لا تستطيع استخدام البوت \n ◉  يرجى الاشتراك بالقناه اولا \n ◉  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
+send(msg.chat_id_, msg.id_,' ◉ تم تعطيل التفجير') 
+return false
+end
+function start_function(extra, result, success)
+database:sadd(bot_id..'Zahf:User'..msg.chat_id_, result.sender_user_id_)
+tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
+usertext = '\n ◉ الـعـضو   ↚ ['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+local  statuss  = '\n ◉تم تفجيره بنجاح\n'
+send(msg.chat_id_, msg.id_, usertext..statuss)
+end,nil)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
+end
+
+if (text == ("اصحه")) and msg.reply_to_message_id_ and Mod(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ✭ لا تستطيع استخدام البوت \n ✭  يرجى الاشتراك بالقناه اولا \n ✭  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+function start_function(extra, result, success)
+database:srem(bot_id..'Zahf:User'..msg.chat_id_, result.sender_user_id_)
+tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
+usertext = '\n ✭ الـعـضو   ⇇['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+status  = '\n ✭ تم رجوع للحياه\n'
+send(msg.chat_id_, msg.id_, usertext..status)
+end,nil)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
+end
+
 if text == 'مسح المحظورين' and Mod(msg) then
 database:del(bot_id..'Ban:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '\n *⌯︙تم مسح المحظورين*')
@@ -10093,7 +10167,7 @@ local texting = {"مووووووووواححح????","مابوس ولي😌😹",
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
-if text == "كت تويت" or text == "كت" then
+if text == "كت تويت" or text == "تويت" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
 local texting = {"آخر مرة زرت مدينة الملاهي؟","آخر مرة أكلت أكلتك المفضّلة؟","الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل","آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟."," فنانك المُفضل؟","لو خيروك تصاحب الناس الاذكياء او الناس المرحين","اسم معلم ترك اثراً جميل عليك رغم قسوتة.؟","وش الحب بنظرك؟","لو خيروك جاي او قهوه","لو فزعت/ي لصديق/ه وقالك مالك دخل وش بتسوي/ين؟","شاركنا أقوى بيت شِعر من تأليفك؟","نصيحه تبدا ب -لا- ؟","كل شيء يهون الا ؟","عندك الشخص الي مستعد يوقف ضد العالم عشانك.؟","العلاقة السرية دائماً تكون حلوة؟","منشن شخص واعترف له بشي","منشن لصديقك المُقرب؟.","اخر خيانه؟.","أول حرف من اسم الحب؟","تشارك كل شي لاهلك ولا فيه أشياء ما تتشارك؟","أكثر شيء تغيّر في أسلوب حياتك بعد كورونا ؟","هات شعورك بسطر اغُنيه؟","شيء مهما حطيت فيه مصاري بتكون مبسوط؟","اغرب شي سويته ؟","كيف تشوف الجيل هذا؟","اخر همك في الحياة ؟","انت من الناس الكتومة ولا تفضفض؟","اكثر مكان تروحه لحالك ؟","قوة الصداقة بشو بتتكون؟","تطبيق تبي تحذفه من جهازك بس مضطر تستخدمه ؟","كم أعلى مبلغ جمعته؟","اخر شي شريته ؟","كلمة للشخص اللي يسب ويسكر؟","لعبة بجوالك تلعبها دايم ؟","مر عليك موقف محرج؟","علمنا عن تجربه خلت شخصيتك اقوى ؟","يوم من أيام الأسبوع روتينه ممل عندك ؟","عندك شخص تسميه ثالث والديك؟","شو هو طعامك المفضل؟","اخر همك في الحياة ؟","شو حابب تقول للاشخاص اللي بتدخل حياتك؟","عبر عن حبك او كرهك لشخص ما تقدر توصل له مشاعرك","موهبتك المكبوتة ؟","انت من الناس اللي تتغزل بالكل ولا بالشخص اللي تحبه بس؟","عبر عن حبك او كرهك لشخص ما تقدر توصل له مشاعرك","ماذا يعني لك حرف A","ماذا يعني لك حرحرM","نسبة رضاك عن نفسك من 10 ؟","عندكم شخص بالبيت بصلح اي شي بيخرب؟","تحس نفسك هطف ؟","تدوس على قلبك او كرامتك؟","  تحس حياتك فاشله ولا ناجحه؟","لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا بترفض؟","ميزة وعيب فيك ؟","وش ينادونك في البيت ؟", }  
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
@@ -10109,18 +10183,32 @@ database:set(bot_id..'lock:reply'..msg.chat_id_,true)
 Text = '\n *⌯︙تم تعطيل الردود*'
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'رابط الحذف' or text == 'رابط حذف' then
-t =[[
-*رابط الحذف في جميع مواقع التواصل ⌯
-فكر قبل لا تتسرع وتروح*
-ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ
- *⌯ رابط حذف*  [Telegram](https://my.telegram.org/auth?to=delete) ܁
- *⌯ رابط حذف* [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
- *⌯ رابط حذف* [Facebook](https://www.facebook.com/help/deleteaccount) ܁
- *⌯ رابط حذف* [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
+if text == 'روابط الحذف' or text == 'رابط  حذف' or text == 'رابط الحذف' then
+local Text = [[
+مواقع  مسح حسابات،🍂
+اترزع هنا متحذفش عشان احبك 💋🌚
 ]]
-send(msg.chat_id_, msg.id_,t) 
-return false
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'Telegram',url="https://my.telegram.org/auth?to=delete"}},
+{{text = 'instagram', url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"}}, 
+{{text = 'Facebook', url="https://www.facebook.com/help/deleteaccount"}}, 
+{{text = 'Snspchat', url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"}}, 
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/yhu79/8&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'بوت الحذف' or text == 'بوت حذف' or text == 'بوت حذف حسابات' then
+local Text = [[
+بوت  مسح حسابات،🍂
+فكر قبل لا تتسرع وتروح
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'BOT Telegram', url="t.me/LC6BOT"}}, 
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/yhu79/7&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text and text:match('^الحساب (%d+)$') then
 local id = text:match('^الحساب (%d+)$')
