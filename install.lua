@@ -63,27 +63,27 @@ os.execute('lua install.lua')
 end
 local function Files_Info_Get()
 Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"),database:get(Server_Done.."User_Write")) 
-local RunBot = io.open("SIRIA", 'w')
+local RunBot = io.open("TELAND", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
-cd $HOME/SIRIA
+cd $HOME/TELAND
 token="]]..database:get(Server_Done.."Token_Write")..[["
-rm -fr SIRIA.lua
-wget "https://raw.githubusercontent.com/gret7/alhref/main/SIRIA.lua"
+rm -fr TELAND.lua
+wget "https://raw.githubusercontent.com/TELANDTEAM/TELAND/main/TELAND.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./SIRIA.lua -p PROFILE --bot=$token
+./tg -s ./TELAND.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
 local RunTs = io.open("Run", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/SIRIA
+cd $HOME/TELAND
 while(true) do
 rm -fr ../.telegram-cli
-screen -S SIRIA -X kill
-screen -S SIRIA ./SIRIA
+screen -S TELAND -X kill
+screen -S TELAND ./TELAND
 done
 ]])
 RunTs:close()
