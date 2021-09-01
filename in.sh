@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-cd $HOME/SIRIA
+cd $HOME/TELAND
 rm -rf $HOME/.telegram-cli
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x SIRIA
+chmod +x TELAND
 chmod +x Run
 ./Run
 }
