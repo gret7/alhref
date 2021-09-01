@@ -9,14 +9,20 @@ bot_id  = token:match("(%d+)")
 SUDO = SUDO
 sudo_users = {SUDO,1816610329,1950281200}   
 print([[
-_____ _____ ___   _ ____  
-|_   _| ____| |  / \  | \ | |  _ \ 
-  | | |  _| | | / _ \ |  \| | | | |
-  | | | |___| |___ / ___ \| |\  | |_| |
-  |_| |_____|_____/_/   \_\_| \_|____/
-> CH › @vvvmh
-> CH › @TELANDTEAM
-~> DEVELOPER › @IMMHH
+echo "  ██████  ██▓ ██▀███   ██▓ ▄▄▄      ";
+echo "▒██    ▒ ▓██▒▓██ ▒ ██▒▓██▒▒████▄    ";
+echo "░ ▓██▄   ▒██▒▓██ ░▄█ ▒▒██▒▒██  ▀█▄  ";
+echo "  ▒   ██▒░██░▒██▀▀█▄  ░██░░██▄▄▄▄██ ";
+echo "▒██████▒▒░██░░██▓ ▒██▒░██░ ▓█   ▓██▒";
+echo "▒ ▒▓▒ ▒ ░░▓  ░ ▒▓ ░▒▓░░▓   ▒▒   ▓▒█░";
+echo "░ ░▒  ░ ░ ▒ ░  ░▒ ░ ▒░ ▒ ░  ▒   ▒▒ ░";
+echo "░  ░  ░   ▒ ░  ░░   ░  ▒ ░  ░   ▒   ";
+echo "      ░   ░     ░      ░        ░  ░";
+echo "                                    ";
+  
+> CH › @siria100
+> CH › @siria100
+~> DEVELOPER › @siria100
 ]])
 if io.open("library/redis.lua","r") then
 io.close(io.open("library/redis.lua","r"))
@@ -5898,7 +5904,7 @@ send(msg.chat_id_, msg.id_, '\n *⌯︙تم مسح المحظورين*')
 end
 if text == ("المحظورين") then
 local list = database:smembers(bot_id..'Ban:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة محظورين الكروب* \n*•━━━━━━ ??𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة محظورين الكروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -10915,7 +10921,7 @@ local Name_Bot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then 
 function FunBot(extra, result, success) 
-local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 💋🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني 🤓❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
+local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 💋🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني 🤓❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂??‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
 end   
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
