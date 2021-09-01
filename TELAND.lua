@@ -878,10 +878,7 @@ local msg_id = msg.id_/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
-},
-{
-{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"},
+{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}
 },
 }
 local function getpro(extra, result, success) 
@@ -2580,7 +2577,7 @@ end
 if text == 'تحديث السورس' and DevTELANDW(msg) then 
 os.execute('rm -rf TELAND.lua')
 os.execute('wget https://raw.githubusercontent.com/gret7/alhref/main/TELAND.lua')
-send(msg.chat_id_, msg.id_,' *⌯︙تم تحديث السورس* \n*⌯︙لديك اخر اصدار لسورس تيلاند*\n*⌯︙الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *⌯︙تم تحديث السورس* \n*⌯︙لديك اخر اصدار لسورس سوريا*\n*⌯︙الاصدار » { 2.8v}*')
 dofile('TELAND.lua')  
 end
 if text and text:match("^تغير الاشتراك$") and DevTELANDW(msg) then  
@@ -4067,7 +4064,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n *⌯︙اهلا بك في متجر ملفات تيلاند*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n\n"
+local TextS = "\n *⌯︙اهلا بك في متجر ملفات سوريا*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n\n"
 local TextE = "\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس سوريا↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -4106,7 +4103,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('TELAND.lua')  
 else
-send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس تيلاند* \n") 
+send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس سوريا* \n") 
 end
 return false
 end
@@ -4128,7 +4125,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('TELAND.lua')  
 else
-send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس تيلاند* \n") 
+send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس سوريا* \n") 
 end
 return false
 end
@@ -8007,8 +8004,8 @@ end
 return false
 end
 
-if text == ""..(database:get(bot_id..'Name:Bot') or 'تيلاند').."" then  
-Namebot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
+if text == ""..(database:get(bot_id..'Name:Bot') or 'سوريا').."" then  
+Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا')
 local TELAND_Msg = {
 'عمغي 🥺💕.',
 'هاا شتريد كافي ☹️.',
@@ -8590,7 +8587,7 @@ database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text)
 end  
 end
 end
-if text == ""..(database:get(bot_id..'Name:Bot') or 'تيلاند').." غادر" or text == 'غادر' then  
+if text == ""..(database:get(bot_id..'Name:Bot') or 'سوريا').." غادر" or text == 'غادر' then  
 if Sudo(msg) and not database:get(bot_id..'Left:Bot'..msg.chat_id_)  then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,'*⌯︙تم مغادرة المجموعه*') 
@@ -10956,7 +10953,7 @@ if (text and text == "تفعيل اوامر التحشيش") then
 send(msg.chat_id_, msg.id_, '  *⌯︙تم تفعيل اوامر التحشيش*')
 database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
+local Name_Bot = (database:get(bot_id..'Name:Bot') or 'سوريا')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then 
 function FunBot(extra, result, success) 
