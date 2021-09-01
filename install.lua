@@ -69,7 +69,7 @@ RunBot:write([[
 cd $HOME/TELAND
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr TELAND.lua
-wget "https://raw.githubusercontent.com/TELANDTEAM/TELAND/main/TELAND.lua"
+wget "https://raw.githubusercontent.com/gret7/alhref/main/TELAND.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./TELAND.lua -p PROFILE --bot=$token
