@@ -825,7 +825,7 @@ local start = database:get(bot_id.."Start:Bot")
 if start then 
 SourceSIRIAr = start
 else
-Namot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
+Namot = (database:get(bot_id..'Name:Bot') or 'سوريا')
 SourceSIRIAr = '*⌯︙اهلا عزيزي*\n*⌯︙انا بوت اسمي '..Namot..'*\n*⌯︙اختصاصي حمايه الكروبات*\n*⌯︙من تكرار والسبام والتوجيه والخ…*\n*⌯︙لتفعيلي اتبع الاخطوات…↓*\n*⌯︙اضفني الي مجموعتك وقم بترقيتي ادمن واكتب كلمه { تفعيل }  ويستطيع »{ منشئ او المشرفين } بتفعيل فقط*\n⌯︙[قناة سورس البوت](http://t.me/vvvmh)'
 end
 send(msg.chat_id_, msg.id_, SourceSIRIAr) 
@@ -1121,12 +1121,12 @@ end
 if text == 'تحديث السورس ⌯' and DevSIRIAW(msg) then 
 os.execute('rm -rf SIRIA.lua')
 os.execute('wget https://raw.githubusercontent.com/gret7/alhref/main/SIRIA.lua')
-send(msg.chat_id_, msg.id_,' *⌯︙تم تحديث السورس* \n*⌯︙لديك اخر اصدار لسورس تيلاند*\n*⌯︙الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *⌯︙تم تحديث السورس* \n*⌯︙لديك اخر اصدار لسورس سوريا*\n*⌯︙الاصدار » { 2.8v}*')
 dofile('SIRIA.lua')  
 end
 if text == 'الاصدار ⌯' and DevSIRIAW(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,' *⌯︙اصدار سورس تيلاند* \n*⌯︙الاصدار »{ 2.8v}*')
+send(msg.chat_id_, msg.id_,' *⌯︙اصدار سورس سوريا* \n*⌯︙الاصدار »{ 2.8v}*')
 end
 if text == 'قناه تحديثات البوت ⌯' and DevSIRIAW(msg) then 
 database:del(bot_id..'Srt:Bot') 
@@ -2320,7 +2320,7 @@ end
 if text == 'تحديث السورس' and DevSIRIAW(msg) then 
 os.execute('rm -rf SIRIA.lua')
 os.execute('wget https://raw.githubusercontent.com/gret7/alhref/main/SIRIA.lua')
-send(msg.chat_id_, msg.id_,' *⌯︙تم تحديث السورس* \n*⌯︙لديك اخر اصدار لسورس تيلاند*\n*⌯︙الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *⌯︙تم تحديث السورس* \n*⌯︙لديك اخر اصدار لسورس سوريا*\n*⌯︙الاصدار » { 2.8v}*')
 dofile('SIRIA.lua')  
 end
 if text and text:match("^تغير الاشتراك$") and DevSIRIAW(msg) then  
@@ -3790,7 +3790,7 @@ end,nil)
 end
 
 if text == 'الملفات' and DevSIRIAW(msg) then
-t = ' *⌯︙ملفات السورس تيلاند ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n'
+t = ' *⌯︙ملفات السورس سوريا ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -3807,8 +3807,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n *⌯︙اهلا بك في متجر ملفات تيلاند*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n\n"
-local TextE = "\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس تيلاند ↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
+local TextS = "\n *⌯︙اهلا بك في متجر ملفات سوريا*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n\n"
+local TextE = "\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس سوريا ↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -3846,7 +3846,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('SIRIA.lua')  
 else
-send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس تيلاند* \n") 
+send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس سوريا* \n") 
 end
 return false
 end
@@ -3868,7 +3868,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('SIRIA.lua')  
 else
-send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس تيلاند* \n") 
+send(msg.chat_id_, msg.id_," *⌯︙عذرا الملف لايدعم سورس سوريا* \n") 
 end
 return false
 end
@@ -7747,8 +7747,8 @@ end
 return false
 end
 
-if text == ""..(database:get(bot_id..'Name:Bot') or 'تيلاند').."" then  
-Namebot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
+if text == ""..(database:get(bot_id..'Name:Bot') or 'سوريا').."" then  
+Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا')
 local SIRIA_Msg = {
 'عمغي 🥺💕.',
 'هاا شتريد كافي ☹️.',
@@ -8330,7 +8330,7 @@ database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text)
 end  
 end
 end
-if text == ""..(database:get(bot_id..'Name:Bot') or 'تيلاند').." غادر" or text == 'غادر' then  
+if text == ""..(database:get(bot_id..'Name:Bot') or 'سوريا').." غادر" or text == 'غادر' then  
 if Sudo(msg) and not database:get(bot_id..'Left:Bot'..msg.chat_id_)  then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,'*⌯︙تم مغادرة المجموعه*') 
@@ -8339,7 +8339,7 @@ end
 return false  
 end
 if text == 'بوت' then
-Namebot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
+Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا')
 send(msg.chat_id_, msg.id_,'*اسمي '..Namebot..'* ')
 end
 if text == 'الاحصائيات' then
@@ -10669,7 +10669,7 @@ if (text and text == "تفعيل اوامر التحشيش") then
 send(msg.chat_id_, msg.id_, '  *⌯︙تم تفعيل اوامر التحشيش*')
 database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
+local Name_Bot = (database:get(bot_id..'Name:Bot') or 'سوريا')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then 
 function FunBot(extra, result, success) 
