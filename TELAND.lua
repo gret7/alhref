@@ -4050,7 +4050,7 @@ end,nil)
 end
 
 if text == 'الملفات' and DevTELANDW(msg) then
-t = ' *⌯︙ملفات السورس تيلاند ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n'
+t = ' *⌯︙ملفات السورس سوريا↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -4068,7 +4068,7 @@ local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
 local TextS = "\n *⌯︙اهلا بك في متجر ملفات تيلاند*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n\n"
-local TextE = "\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس تيلاند ↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
+local TextE = "\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس سوريا↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -8598,9 +8598,39 @@ database:srem(bot_id..'Chek:Groups',msg.chat_id_)
 end
 return false  
 end
-if text == 'بوت' then
-Namebot = (database:get(bot_id..'Name:Bot') or 'تيلاند')
-send(msg.chat_id_, msg.id_,'*اسمي '..Namebot..'* ')
+if text == "بوت" then
+local Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا') 
+local TELAND_Msg = { 
+'اسمي  '..Namebot..' يا قلبي 🤤💚',
+'اسمي '..Namebot..' يا روحي🙈❤️',
+'اسمي  '..Namebot..' يعمري♥️',
+'اسمي  '..Namebot..' يا قمر 🐭🤍',
+'اسمي  '..Namebot..' يامزه 🥺❤️',
+'اسمي  '..Namebot..' يعم 😒',
+'مقولت اسمي '..Namebot..' في اي 🙄',
+'اسمي الكيوت '..Namebot..' 🌝💘',
+'اسمي  '..Namebot..' ياحياتي🧸♥️',
+'اسمي  '..Namebot..' يوتكه🙈🍑',
+} 
+Namebot = TELAND_Msg[math.random(#TELAND_Msg)] 
+local msg_id = msg.id_/2097152/0.5  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(Namebot).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,Namebot, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = bot_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
@@ -10291,7 +10321,7 @@ local Teext =[[
 *⌯~⪼ نسبه الحب*
 *⌯~⪼ ءall*
  *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛??𝘈𝘮](t.me/TELANDTEAM)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
