@@ -282,6 +282,17 @@ else
 return var
 end
 end
+function AddChannel(User)
+local var = true
+if database:get(bot_id..'add:ch:id') then
+local url , res = https.request("https://api.telegram.org/bot"..token.."/getchatmember?chat_id="..database:get(bot_id..'add:ch:id').."&user_id="..User);
+data = json:decode(url)
+if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
+var = false
+end
+end
+return var
+end
 function getChatId(id)
 local chat = {}
 local id = tostring(id)
