@@ -2894,10 +2894,10 @@ if data.Ch_Member.info ~= true then
 send(msg.chat_id_,msg.id_,'⌯︙شترك في قناة السورس اولآ @TELANDTEAM .')
 return false 
 end
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ\n\n[⌯  ᴛᴇʟᴀɴᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/TELANDTEAM)\n\n[⌯  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/vvvmh)\n\n[⌯  ᴛᴇʟᴀɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/IMMHH)\n\n[⌯  ʙᴏᴛ ᴛᴇʟᴀɴᴅ](http://t.me/Tilllandbot)"
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊 \n\n[⌯  ᴛᴇʟᴀɴᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/X_G_33)\n\n[⌯  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/vvvmh)\n\n[⌯  ᴛᴇʟᴀɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/IMMHH)\n\n[⌯  ʙᴏᴛ ᴛᴇʟᴀɴᴅ](http://t.me/Tilllandbot)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⌯ sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url="t.me/TELANDTEAM/3"}},
+{{text = '⌯𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊 ',url="t.me/X_G_33"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/TELANDTEAM&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10190,7 +10190,7 @@ infovid = "⌯︙ اختر صيغه التنزيل الان.\n"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'Mp4', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":Mp4"},{text = 'mp3', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":mp3"},{text = 'ogg', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":ogg"}},
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(infovid)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 InfoVid = https.request('https://black-source.tk/Api/BotYoutube.php?Id='..URL.escape(id_from_vid))
@@ -10787,7 +10787,7 @@ local idchci = "-100"..idch
 local animation = DAata:match("^animation(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text ="*⌯ تم الغاء منعها بنجاح*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10798,7 +10798,7 @@ local idchci = database:get(bot_id.."Filter:msg")
 local photo = DAata:match("^pito(.*)$")
 local Text ="*⌯ تم الغاء منعها بنجاح*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10810,7 +10810,7 @@ local idchci = "-100"..idch
 local Sticker = DAata:match("^Sticker(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text ="*⌯ تم الغاء منعه بنجاح*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10820,7 +10820,7 @@ if DAata and DAata:match("^delallSticker(.*)$") then
 local delallSticker = DAata:match("^delallSticker(.*)$")
 local Text ="*⌯ تم الغاء منع كل المتحركات*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10833,7 +10833,7 @@ if DAata and DAata:match("^delallanimation(.*)$") then
 local delallmation = DAata:match("^delallanimation(.*)$")
 local Text ="*⌯ تم الغاء منع كل المتحركات*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10846,7 +10846,7 @@ if DAata and DAata:match("^delallph(.*)$") then
 local delallph = DAata:match("^delallph(.*)$")
 local Text ="*⌯ تم الغاء منع كل الصور*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10860,13 +10860,13 @@ if database:get(bot_id..'Set:array'..data.sender_user_id_..':'..Chat_id) == 'tru
 database:del(bot_id..'Set:array'..data.sender_user_id_..':'..Chat_id)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *⌯︙تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *⌯︙تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10876,28 +10876,28 @@ tdcli_function({ID="ChangeChatMemberStatus",chat_id_=Chat_id,user_id_=data.sende
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *⌯︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if (data and data.code_ and data.code_ == 3) then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *⌯︙البوت ليس ادمن يرجى ترقيتي !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *⌯︙عذرا لا استطيع طرد ادمنية الكروب*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if data and data.ID and data.ID == 'Ok' then
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *⌯︙تم الطرد بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10907,7 +10907,7 @@ if DAata == 'noKikedMe'..data.sender_user_id_ then
 local Text ="*⌯ تم الغاء الطرد بنجاح .*"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'sᴏᴜʀᴄʀ ᴛᴇʟᴀɴᴅ',url='http://t.me/TELANDTEAM'}},
+{{text = '𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊',url='http://t.me/X_G_33'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
