@@ -8617,9 +8617,6 @@ local msg_id = msg.id_/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
-},
-{
 {text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"},
 },
 }
@@ -10321,7 +10318,7 @@ local Teext =[[
 *⌯~⪼ نسبه الحب*
 *⌯~⪼ ءall*
  *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛??𝘈𝘮](t.me/TELANDTEAM)
+[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
