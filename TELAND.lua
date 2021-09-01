@@ -2884,20 +2884,22 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://vvvzvv.ml/apiteland/Teland.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'⌯︙شترك في قناة السورس اولآ @TELANDTEAM .')
-return false 
-end
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊 \n\n[⌯  ᴛᴇʟᴀɴᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/X_G_33)\n\n[⌯  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/vvvmh)\n\n[⌯  ᴛᴇʟᴀɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/IMMHH)\n\n[⌯  ʙᴏᴛ ᴛᴇʟᴀɴᴅ](http://t.me/Tilllandbot)"
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+local msg_id = msg.id_/2097152/0.5
+local Text = [[
+◍ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗘𝗚 𝗦𝗢𝗥𝗖𝗘 𝗜𝗡 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 ⶄ 
+🌖
+◍ 𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 𝘽𝙀𝙎𝙏 𝙎𝙐𝙍𝘾𝙀 𖢝  🐾
+ᶠᵒˡˡᵒʷ ᵗʰᵉ ᵈᵉᵛᵉˡᵒᵖᵉʳ ᵇᵘᵗᵗᵒᶰˢ ᵇᵉˡᵒʷ ♰ 
+...
+]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⌯𝚜𝚞𝚛𝚌𝚎 𝚜𝚒𝚛𝚒𝚊 ',url="t.me/X_G_33"}},
+{{text = '  ◍ 𝘼𝙃𝙈𝙀𝘿 𝙎𝙄𝙍𝙄𝘼  𖣌 ',url="t.me/siria100"}},
+{{text = '  ◍ 𝙆𝘼𝙎𝘼𝙃𝘼 ↺  𖣌 ', url="t.me/MR_AAS"}},
+{{text = '   ◍ 𝙈𝙔 𝘾𝙃𝘼𝙉𝙀𝙀𝙀𝙇 𖢑  𖣌  ', url="t.me/X_G_33"}},
 }
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/TELANDTEAM&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
