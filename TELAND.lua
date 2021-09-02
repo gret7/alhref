@@ -11174,7 +11174,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/UUU_OOO1&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'معلومات السيرفر' and DevSoFi(msg) then 
+if text == 'معلومات السيرفر' and DevTELANDW(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -11190,7 +11190,7 @@ echo '╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n◉✔{ مـده تـش�
 ]]):read('*all'))  
 end
 
-if text == 'رفع المشتركين' and DevSoFi(msg) then 
+if text == 'رفع المشتركين' and DevTELANDW(msg) then 
 function by_reply(extra, result, success)    
 if result.content_.document_ then  
 local ID_FILE = result.content_.document_.document_.persistent_id_  
@@ -11207,7 +11207,7 @@ end
 end 
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
 end
-if text == 'جلب المشتركين' and DevSoFi(msg) then 
+if text == 'جلب المشتركين' and DevTELANDW(msg) then 
 local list = database:smembers(bot_id..'User_Bot') 
 local t = '{"users":['   
 for k,v in pairs(list) do 
