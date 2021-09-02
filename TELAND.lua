@@ -36,7 +36,7 @@ if io.open("File_Bot/commands.lua","r") then
 io.close(io.open("File_Bot/commands.lua","r"))
 print("done => commands.lua")
 else
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/X_G_33/Files_Teland/main/File_Bot/commands.lua") 
 print("end wget => commands.lua")
 end
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
@@ -4061,7 +4061,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevTELANDW(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/X_G_33/Files_Teland/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -4099,7 +4099,7 @@ t = " *⌯︙الملف »* "..file.."\n*⌯︙تم تعطيل ملف* \n"
 else
 t = " *⌯︙بالتاكيد تم تعطيل ملف →* "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/X_G_33/Files_Teland/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -4119,7 +4119,7 @@ t = " *⌯︙بالتاكيد تم تفعيل ملف →* "..file.." \n"
 else
 t = " *⌯︙الملف »* "..file.."\n*⌯︙تم تفعيل ملف* \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/X_G_33/Files_Teland/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -8878,7 +8878,7 @@ send(msg.chat_id_, msg.id_,'*⌯︙لا يمكن وضع او تعديل لقب �
 return false  
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n*⌯︙العضو »* ['..data.first_name_..'](t.me/'..(data.username_ or 'TELANDTEAM')..') '
+usertext = '\n*⌯︙العضو »* ['..data.first_name_..'](t.me/'..(data.username_ or 'X_G_33')..') '
 status  = '\n*⌯︙الايدي »* '..result.sender_user_id_..'\n*⌯︙تم ضافه {'..timsh..'} كلقب له*'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
@@ -9908,35 +9908,31 @@ send(msg.chat_id_, msg.id_, ' *⌯︙الان يمكنك ارسال الكليش
 database:set(bot_id..'help10'..msg.sender_user_id_,'true')
 return false 
 end
-if text == 'الاوامر' then
-if not Mod(msg) then
-send(msg.chat_id_, msg.id_,'◉ ليس لديك رتبه لاستخدام هذه الاوامر 🙂')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local X_G_33  = database:get(bot_id..'text:ch:user')
-if X_G_33  then
-send(msg.chat_id_, msg.id_,'['..X_G_33 ..']')
-else
-send(msg.chat_id_, msg.id_,'◉لا تستطيع استخدام البوت \n ◉يرجى الاشتراك بالقناه اولا \n ◉اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
-local Text =[[
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ قم بأختيار اللغه.. ↑↓
-◉ Choose language.. ↑↓ 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ](t.me/X_G_33 )
+if text == 'الاوامر' and Mod(msg) then
+local help_text = database:get(bot_id..'help_text')
+Text = [[
+*⌯اهلا انتツفي اوامر البوت⌯*
+ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ
+*⌯م1 ◂ اوامر الحمايه*
+*⌯م2 ◂ اوامر تعطيل ~ تفعيل*
+*⌯م3 ◂ اوامر ضع ~ اضف*
+*⌯م4 ◂ اوامر مسح ~ حذف*
+*⌯م5 ◂ اوامر تنزيل+رفع+التغير*
+*⌯م6 ◂ اوامر الجروب*
+*⌯م7 ◂ اوامر التحشيش*
+*⌯م8 ◂ اوامر مطور البوت*
+*⌯م9 ◂ اوامر مطور الاساسي* 
+*⌯م10 ◂ اوامر الاعضاء*
+ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ
+[𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ](t.me/vvvmh) 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = 'english 𝅘𝅥𝅮', callback_data="/add"},{text = 'عربي 𝅘𝅥𝅮', callback_data="/help90"},
-},
-{
-{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ', url="t.me/X_G_33 "},
-},
+{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
+{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
+{{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
+{{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ', url="t.me/X_G_33"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9968,7 +9964,7 @@ _key = {
 {{text="🦖 TELAND Game 🦖",url='https://t.me/T4TTTTBOT?game=TELAND'},{text="🐍 3D Snake Game 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 Color Game 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 Rocket Game 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 Arrow Game 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = '𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ', url="t.me/X_G_33"}},
 {{text = 'مطور السورس', url="t.me/IMMHH"}},
 }
 send_inlin_key(msg.chat_id_," *⌯︙قائمه الالعاب الاحترافيه اضغط للعب*",_key,msg.id_)
@@ -9994,7 +9990,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'ٴ⌯∫ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ⌯∫○ٴ\n⌯︙[𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀](t.me/vvvmh) ')
+send(msg.chat_id_, msg.id_, t..'ٴ⌯∫ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ⌯∫○ٴ\n⌯︙[𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ](t.me/vvvmh) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '*⌯︙تم تعطيل الابراج*')
@@ -10140,7 +10136,7 @@ if audios.Info == true then
 local Text ='*⌯︙تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀.',url="t.me/TELANDTEAM"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 .',url="t.me/X_G_33"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
