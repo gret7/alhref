@@ -36,7 +36,7 @@ if io.open("File_Bot/commands.lua","r") then
 io.close(io.open("File_Bot/commands.lua","r"))
 print("done => commands.lua")
 else
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/X_G_33/Files_Teland/main/File_Bot/commands.lua") 
 print("end wget => commands.lua")
 end
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
@@ -2887,7 +2887,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local msg_id = msg.id_/2097152/0.5
 local Text = [[
-◍ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗘𝗚 𝗦𝗢𝗥𝗖𝗘 𝗜𝗡 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 ⶄ 
+◍ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗘𝗚 𝗦𝗢𝗥𝗖𝗘 𝗜𝗡 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 𝗟𝗘𝗚𝗥𝗔𝗠 ⶄ 
 🌖
 ◍ 𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 𝘽𝙀𝙎𝙏 𝙎𝙐𝙍𝘾𝙀 𖢝  🐾
 ᶠᵒˡˡᵒʷ ᵗʰᵉ ᵈᵉᵛᵉˡᵒᵖᵉʳ ᵇᵘᵗᵗᵒᶰˢ ᵇᵉˡᵒʷ ♰ 
@@ -2920,7 +2920,7 @@ GetFile_Bot(msg)
 end
 if text == 'الاوامر المضافه' and Constructor(msg) then
 local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_..'')
-t = " *⌯︙قائمه الاوامر المضافه*  \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = " *⌯︙قائمه الاوامر المضافه*  \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
 print(Cmds)
@@ -3791,7 +3791,7 @@ return false
 end
 if text == ("قائمه العام") and DevTELANDW(msg) then
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n *⌯︙قائمة المحظورين عام* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة المحظورين عام* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4004,7 +4004,7 @@ send(msg.chat_id_, msg.id_, "\n *⌯︙تم مسح قائمة المطورين* 
 end
 if text == ("المطورين") and DevTELANDW(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n *⌯︙قائمة مطورين البوت* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة مطورين البوت* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4049,7 +4049,7 @@ end,nil)
 end
 
 if text == 'الملفات' and DevTELANDW(msg) then
-t = ' *⌯︙ملفات السورس سوريا↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n'
+t = ' *⌯︙ملفات السورس سوريا↓*\n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•* \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -4061,13 +4061,13 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevTELANDW(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/X_G_33/Files_Teland/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n *⌯︙اهلا بك في متجر ملفات سوريا*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n\n"
-local TextE = "\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس سوريا↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
+local TextS = "\n *⌯︙اهلا بك في متجر ملفات سوريا*\n*⌯︙ملفات السورس ↓*\n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n\n"
+local TextE = "\n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n *⌯︙علامة تعني { ✓ } ملف مفعل*\n *⌯︙علامة تعني { ✘ } ملف معطل*\n *⌯︙قناة سورس سوريا↓*\n".." *⌯︙*[اضغط هنا لدخول](t.me/vvvmh) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -4099,7 +4099,7 @@ t = " *⌯︙الملف »* "..file.."\n*⌯︙تم تعطيل ملف* \n"
 else
 t = " *⌯︙بالتاكيد تم تعطيل ملف →* "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/X_G_33/Files_Teland/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -4119,7 +4119,7 @@ t = " *⌯︙بالتاكيد تم تفعيل ملف →* "..file.." \n"
 else
 t = " *⌯︙الملف »* "..file.."\n*⌯︙تم تفعيل ملف* \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TELANDTEAM/Files_Teland/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/X_G_33/Files_Teland/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -4234,7 +4234,7 @@ return false
 end
 if text == 'قائمه المالك' and Sudo(msg) then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n *⌯︙قائمه المالك* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمه المالك* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4251,7 +4251,7 @@ return false
 end
 if text == ("صيح للمالك") or text == ("تاك للمالك") then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4367,7 +4367,7 @@ st = https.request('https://vvvzvv.ml/Imagelnfo.php?token='..token..'&url='..sti
 eker = JSON.decode(st)
 if eker.ok.Info == "Indecent" then
 local list = database:smembers(bot_id.."Basic:Constructor"..msg.chat_id_)
-t = "*⌯︙المنشئين الاساسين تعالو مخرب* \n *•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n"
+t = "*⌯︙المنشئين الاساسين تعالو مخرب* \n *•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•* \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4433,7 +4433,7 @@ Srrt = https.request('https://vvvzvv.ml/Imagelnfo.php?token='..token..'&url='..p
 Sto = JSON.decode(Srrt)
 if Sto.ok.Info == "Indecent" then
 local list = database:smembers(bot_id.."Basic:Constructor"..msg.chat_id_)
-t = "*⌯︙المنشئين الاساسين تعالو مخرب* \n *•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n"
+t = "*⌯︙المنشئين الاساسين تعالو مخرب* \n *•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•* \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4451,7 +4451,7 @@ end
 end
 if text == 'المنشئين الاساسين' and SudoBotCoSu(msg) then
 local list = database:smembers(bot_id..'Basic:Constructor'..msg.chat_id_)
-t = "\n *⌯︙قائمة المنشئين الاساسين* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة المنشئين الاساسين* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4468,7 +4468,7 @@ return false
 end
 if text == ("تاك للمنشئين الاساسين") or text == ("صيح المنشئين الاساسين") then
 local list = database:smembers(bot_id..'Basic:Constructor'..msg.chat_id_)
-t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4581,7 +4581,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == ("المنشئين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n *⌯︙قائمة المنشئين* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة المنشئين* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4597,7 +4597,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمنشئين") or text == ("صيح المنشئين") then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4724,7 +4724,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n *⌯︙قائمة المدراء* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة المدراء* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4740,7 +4740,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمدراء") or text == ("صيح المدراء") then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4931,7 +4931,7 @@ return false
 end
 if text == ("الثانويين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."DEV:Sudo:T")
-t = "\n*⌯︙قائمة مطورين الثانويين للبوت* \n *•━━━━━━ 𝗧𝗘 ━━━━━━━•* \n"
+t = "\n*⌯︙قائمة مطورين الثانويين للبوت* \n *•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•* \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4955,7 +4955,7 @@ send(msg.chat_id_, msg.id_, ' ⌯︙تم مسح الادمنيه')
 end
 if text == ("الادمنيه") and Manager(msg) then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة الادمنيه* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الادمنيه* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4971,7 +4971,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للادمنيه") or text == ("صيح الادمنيه") then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5219,7 +5219,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم مسح المميزين*')
 end
 if text == ("المميزين") and Mod(msg) then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة مميزين الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة مميزين الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5235,7 +5235,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمميزين") or text == ("صيح المميزين") then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙وينكم تعالو يريدوكم بجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5358,7 +5358,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم مسح جميع المطايه*')
 end
 if text == ("تاك للمطايه") and Mod(msg) then
 local list = database:smembers(bot_id..'Mote:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة مطايه الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة مطايه الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5409,7 +5409,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم مسح جميع المطايه*')
 end
 if text == ("تاك للحاتات") and Mod(msg) then
 local list = database:smembers(bot_id..'Mode:User'..msg.chat_id_)
-t = "\n *⌯︙قائمه حاتات الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمه حاتات الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5457,7 +5457,7 @@ end
 
 if text == ("تاك للحات") and Mod(msg) then
 local list = database:smembers(bot_id..'Modde:User'..msg.chat_id_)
-t = "\n *⌯︙قائمه حات الجروب* \nٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ\n"
+t = "\n *⌯︙قائمه حات الجروب* \nٴ*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5507,7 +5507,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع صخوله من ا
 end
 if text == ("تاك للصخوله") and Mod(msg) then
 local list = database:smembers(bot_id..'Sakl:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة صخوله الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة صخوله الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5557,7 +5557,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع جلاب الجر�
 end
 if text == ("تاك للجلاب") and Mod(msg) then
 local list = database:smembers(bot_id..'Motte:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة الجلاب الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الجلاب الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5608,7 +5608,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع القروده ب�
 end
 if text == ("تاك للقروده") and Mod(msg) then
 local list = database:smembers(bot_id..'Motee:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة القروده الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة القروده الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5659,7 +5659,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع الحصونه ب�
 end
 if text == ("تاك للحصونه") and Mod(msg) then
 local list = database:smembers(bot_id..'Hors:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة الحصونه الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الحصونه الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5710,7 +5710,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع البقرات ب�
 end
 if text == ("تاك للبقرات") and Mod(msg) then
 local list = database:smembers(bot_id..'Bakra:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة البقرات الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة البقرات الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5761,7 +5761,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع طليان بال�
 end
 if text == ("تاك للطليان") and Mod(msg) then
 local list = database:smembers(bot_id..'Tele:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة الطليان الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الطليان الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5812,7 +5812,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع زواحف*')
 end
 if text == ("تاك للزواحف") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة الزواحف الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الزواحف الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5863,7 +5863,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم تنزيل جميع جريزي*')
 end
 if text == ("تاك للجريذيه") and Mod(msg) then
 local list = database:smembers(bot_id..'Jred:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة الجريذيه الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الجريذيه الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5988,7 +5988,7 @@ send(msg.chat_id_, msg.id_, '\n *⌯︙تم مسح المحظورين*')
 end
 if text == ("المحظورين") then
 local list = database:smembers(bot_id..'Ban:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة محظورين الجروب* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة محظورين الجروب* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6192,7 +6192,7 @@ send(msg.chat_id_, msg.id_, ' *⌯︙تم مسح المكتومين*')
 end
 if text == ("المكتومين") and Mod(msg) then
 local list = database:smembers(bot_id..'Muted:User'..msg.chat_id_)
-t = "\n *⌯︙قائمة المكتومين* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة المكتومين* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7696,7 +7696,7 @@ end
 if text == ("كشف البوتات") and Mod(msg) then  
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = "\n *⌯︙قائمة البوتات الموجوده* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+text = "\n *⌯︙قائمة البوتات الموجوده* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -7715,7 +7715,7 @@ send(msg.chat_id_, msg.id_, " *⌯︙لا توجد بوتات في الجروب*
 return false 
 end
 if #admins == i then 
-local a = '\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n*⌯︙عدد البوتات التي هنا >> {'..n..'} بوت*\n'
+local a = '\n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n*⌯︙عدد البوتات التي هنا >> {'..n..'} بوت*\n'
 local f = '*⌯︙عدد البوتات التي هي ادمن >> {'..t..'}*\n*⌯︙ملاحضه علامة ال (✯) تعني ان البوت ادمن* \n'
 send(msg.chat_id_, msg.id_, text..a..f)
 end
@@ -7795,7 +7795,7 @@ if #list == 0 then
 send(msg.chat_id_, msg.id_,' *⌯︙لا توجد صلاحيات مضافه*')
 return false
 end
-t = "\n *⌯︙قائمة الصلاحيات المضافه* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+t = "\n *⌯︙قائمة الصلاحيات المضافه* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 var = database:get(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
@@ -8150,7 +8150,7 @@ end,nil)
 end
 if text == "تاك للكل" and Mod(msg) and GetChannelMember(msg) then   
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 200},function(ta,TELAND)
-local t = "\n*ツ قائمة الاعضاء* \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+local t = "\n*ツ قائمة الاعضاء* \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 x = 0
 local list = TELAND.members_
 for k, v in pairs(list) do
@@ -8298,7 +8298,7 @@ end
 
 if text == ("ردود المطور") and DevTELANDW(msg) then 
 local list = database:smembers(bot_id..'List:Rd:Sudo')
-text = "\n ⌯︙قائمة ردود المطور \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+text = "\n ⌯︙قائمة ردود المطور \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Sudo:Gif"..v) then
 db = 'متحركه'
@@ -8465,7 +8465,7 @@ send(msg.chat_id_, msg.id_," *⌯︙تم مسح ردود المدير*")
 end
 if text == ("ردود المدير") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = " ⌯︙قائمه ردود المدير \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+text = " ⌯︙قائمه ردود المدير \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = 'متحركه'
@@ -8878,7 +8878,7 @@ send(msg.chat_id_, msg.id_,'*⌯︙لا يمكن وضع او تعديل لقب �
 return false  
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n*⌯︙العضو »* ['..data.first_name_..'](t.me/'..(data.username_ or 'TELANDTEAM')..') '
+usertext = '\n*⌯︙العضو »* ['..data.first_name_..'](t.me/'..(data.username_ or 'X_G_33')..') '
 status  = '\n*⌯︙الايدي »* '..result.sender_user_id_..'\n*⌯︙تم ضافه {'..timsh..'} كلقب له*'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
@@ -9123,7 +9123,7 @@ end
 end
 if text == ("الردود المتعدده") and Manager(msg) then
 local list = database:smembers(bot_id..'List:array'..msg.chat_id_..'')
-text = " ⌯︙قائمه الردود المتعدده \n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n"
+text = " ⌯︙قائمه الردود المتعدده \n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n"
 for k,v in pairs(list) do
 text = text..""..k..">> ("..v..") » {رساله}\n"
 end
@@ -9693,7 +9693,7 @@ if Json_Info.result.can_restrict_members == true then
 restrict = 'ꪜ' else restrict = '✘' end
 if Json_Info.result.can_promote_members == true then
 promote = 'ꪜ' else promote = '✘' end 
-send(msg.chat_id_,msg.id_,'\n *⌯︙اهلا عزيزي البوت هنا ادمن*'..'\n*⌯︙وصلاحياته هي ↓* \n*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*'..'\n*⌯︙تغير معلومات الجروب ↞ ❴ '..info..' ❵'..'*\n*⌯︙حذف الرسائل ↞ ❴ '..delete..' ❵'..'*\n*⌯︙حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'*\n*⌯︙دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'*\n*⌯︙تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'*\n*⌯︙اضافة مشرفين جدد ↞ ❴ '..promote..' ❵*')   
+send(msg.chat_id_,msg.id_,'\n *⌯︙اهلا عزيزي البوت هنا ادمن*'..'\n*⌯︙وصلاحياته هي ↓* \n*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*'..'\n*⌯︙تغير معلومات الجروب ↞ ❴ '..info..' ❵'..'*\n*⌯︙حذف الرسائل ↞ ❴ '..delete..' ❵'..'*\n*⌯︙حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'*\n*⌯︙دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'*\n*⌯︙تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'*\n*⌯︙اضافة مشرفين جدد ↞ ❴ '..promote..' ❵*')   
 end
 end
 end
@@ -9912,7 +9912,7 @@ if text == 'الاوامر' and Mod(msg) then
 local help_text = database:get(bot_id..'help_text')
 Text = [[
 *⌯اهلا انتツفي اوامر البوت⌯*
-ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ
+ٴ*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*ٴ
 *⌯م1 ◂ اوامر الحمايه*
 *⌯م2 ◂ اوامر تعطيل ~ تفعيل*
 *⌯م3 ◂ اوامر ضع ~ اضف*
@@ -9923,8 +9923,8 @@ Text = [[
 *⌯م8 ◂ اوامر مطور البوت*
 *⌯م9 ◂ اوامر مطور الاساسي* 
 *⌯م10 ◂ اوامر الاعضاء*
-ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ
-[𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀 ](t.me/vvvmh) 
+ٴ*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*ٴ
+[𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ](t.me/vvvmh) 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -9932,7 +9932,7 @@ keyboard.inline_keyboard = {
 {{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
-{{text = '𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9964,7 +9964,7 @@ _key = {
 {{text="🦖 TELAND Game 🦖",url='https://t.me/T4TTTTBOT?game=TELAND'},{text="🐍 3D Snake Game 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 Color Game 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 Rocket Game 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 Arrow Game 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = '𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 {{text = 'مطور السورس', url="t.me/IMMHH"}},
 }
 send_inlin_key(msg.chat_id_," *⌯︙قائمه الالعاب الاحترافيه اضغط للعب*",_key,msg.id_)
@@ -9984,13 +9984,13 @@ if text and text:match("^زخرفه (.*)$") and database:get(bot_id.." amir:zhrf
 local TextZhrfa = text:match("^زخرفه (.*)$")
 zh = https.request('https://vvvzvv.ml/amirZhfa/Teland.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
-t = "\n*⌯︙قائمه الزخرفه* \nٴ⌯∫ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ⌯∫○ٴ \n"
+t = "\n*⌯︙قائمه الزخرفه* \nٴ⌯∫ٴ*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*ٴ⌯∫○ٴ \n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'ٴ⌯∫ٴ*•━━━━━━ 𝗧𝗘 ━━━━━━━•*ٴ⌯∫○ٴ\n⌯︙[𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀](t.me/vvvmh) ')
+send(msg.chat_id_, msg.id_, t..'ٴ⌯∫ٴ*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*ٴ⌯∫○ٴ\n⌯︙[𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/vvvmh) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '*⌯︙تم تعطيل الابراج*')
@@ -10136,7 +10136,7 @@ if audios.Info == true then
 local Text ='*⌯︙تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀.',url="t.me/TELANDTEAM"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔.',url="t.me/X_G_33"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10321,10 +10321,10 @@ return false
 end
 local Teext =[[
 *⌯~⪼ اوامر الحمايه اتبع مايلي ...*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ قفل + فتح ← الامر…*
 *⌯~⪼ ← { بالتقيد ، بالطرد ، بالكتم }*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الروابط*
 *⌯~⪼ المعرف*
 *⌯~⪼ التاك*
@@ -10336,7 +10336,7 @@ local Teext =[[
 *⌯~⪼ الصور*
 *⌯~⪼ التفليش*
 *⌯~⪼ الاباحي*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الماركداون*
 *⌯~⪼ البوتات*
 *⌯~⪼ التكرار*
@@ -10346,14 +10346,14 @@ local Teext =[[
 *⌯~⪼ الفيديو*
 *⌯~⪼ الانلاين*
 *⌯~⪼ الدردشه*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ التوجيه*
 *⌯~⪼ الاغاني*
 *⌯~⪼ الصوت*
 *⌯~⪼ الجهات*
 *⌯~⪼ الاشعارات*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10362,7 +10362,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10375,9 +10375,9 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي …*
 *⌯~⪼ اوامر تفعيل وتعطيل …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ تفعيل ~ تعطيل + امر …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اطردني*
 *⌯~⪼ صيح*
 *⌯~⪼ ضافني*
@@ -10410,8 +10410,8 @@ local Teext =[[
 *⌯~⪼ نسبه الكره*
 *⌯~⪼ نسبه الحب*
 *⌯~⪼ ءall*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10420,7 +10420,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10433,13 +10433,13 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي …*
 *⌯~⪼ اوامر الوضع ~ اضف …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اضف / حذف ← رد*
 *⌯~⪼ اضف / حذف ← رد متعدد*
 *⌯~⪼ اضف / حذف ← صلاحيه*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ ضع + امر …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اسم*
 *⌯~⪼ رابط*
 *⌯~⪼ ترحيب*
@@ -10447,8 +10447,8 @@ local Teext =[[
 *⌯~⪼ صوره*
 *⌯~⪼ وصف*
 *⌯~⪼ تكرار + عدد*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10457,7 +10457,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10470,9 +10470,9 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي …*
 *⌯~⪼ اوامر مسح / الحذف ← امر*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ مسح + امر …*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الايدي*
 *⌯~⪼ الادمنيه*
 *⌯~⪼ المميزين*
@@ -10489,13 +10489,13 @@ local Teext =[[
 *⌯~⪼ قائمه منع الملصقات*
 *⌯~⪼ مسح قائمه المنع* 
 *⌯~⪼ المحذوفين*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ حذف + امر ...*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ امر *
 *⌯~⪼ الاوامر المضافه*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10504,7 +10504,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10517,7 +10517,7 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي …*
 *⌯~⪼ اوامر تنزيل ورفع …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ مميز*
 *⌯~⪼ ادمن*
 *⌯~⪼ مدير*
@@ -10530,9 +10530,9 @@ local Teext =[[
 *⌯~⪼ القيود*
 *⌯~⪼ تنزيل جميع الرتب*
 *⌯~⪼ تنزيل الكل* 
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اوامر التغير …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ تغير رد المطور + اسم*
 *⌯~⪼ تغير رد المالك + اسم*
 *⌯~⪼ تغير رد منشئ الاساسي + اسم*
@@ -10543,8 +10543,8 @@ local Teext =[[
 *⌯~⪼ تغير رد العضو + اسم*
 *⌯~⪼ تغير امر الاوامر*
 *⌯~⪼ تغير امر م1 ~ الئ م10*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10553,7 +10553,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10566,9 +10566,9 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي …*
 *⌯~⪼ اوامر المجموعه …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الاوامر … كالتالي*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ استعاده الاوامر*
 *⌯~⪼ تحويل كالاتي~⪼ صور : ملصق : صوت : بصمه*
 *⌯~⪼ صيح ~ تاك ~ المميزين : الادمنيه : المدراء : المنشئين : المنشئين الاساسين : للمالك*
@@ -10611,8 +10611,8 @@ local Teext =[[
 *⌯~⪼ نسبه رجوله*
 *⌯~⪼ نسبه الكره*
 *⌯~⪼ نسبه الانوثه*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10621,7 +10621,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10633,43 +10633,43 @@ return false
 end
 local Teext =[[
 *⌯~⪼ الاوامر التحشيش …*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← الامࢪ*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← مطي* 
 *⌯~⪼ تاك للمطايه*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← صخل*
 *⌯~⪼ تاك لصخوله*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← جلب*
 *⌯~⪼ تاك لجلاب*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← قرد *
 *⌯~⪼ تاك لقروده*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← بقره*
 *⌯~⪼ تاك لبقرات*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← حصان*
 *⌯~⪼ تاك لحصونه*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← طلي*
 *⌯~⪼ تاك لطليان*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← زاحف* 
 *⌯~⪼ تاك لزواحف*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← جريذي*
 *⌯~⪼ تاك لجريذيه*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← الحات*
 *⌯~⪼ تاك للحات*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ رفع + تنزيل ← الحاته*
 *⌯~⪼ تاك للحاتات*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10678,7 +10678,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10690,7 +10690,7 @@ return false
 end
 local Teext =[[
 *⌯~⪼اوامر المطورين* 
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ تفعيل ← تعطيل* 
 *⌯~⪼ المجموعات ← المشتركين ← الاحصائيات*
 *⌯~⪼ رفع ← تنزيل منشئ اساسي*
@@ -10701,8 +10701,8 @@ local Teext =[[
 *⌯~⪼ اسم ~⪼ غادر + غادر*
 *⌯~⪼ اذاعه* 
 *⌯~⪼ ردود المطور *
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10711,7 +10711,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10724,7 +10724,7 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي √*
 *⌯~⪼ اوامر مطور الاساسي...↓*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ تفعيل*
 *⌯~⪼ تعطيل*
 *⌯~⪼ مسح الاساسين*
@@ -10737,7 +10737,7 @@ local Teext =[[
 *⌯~⪼ رفع ~⪼ تنزيل مطور ثانوي*
 *⌯~⪼ الثانويين ~⪼ مسح الثانويين*
 *⌯~⪼ تفعيل ~⪼ تعطيل الاضافات*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اسم البوت + غادر*
 *⌯~⪼ غادر*
 *⌯~⪼ اسم بوت + الرتبه*
@@ -10749,19 +10749,19 @@ local Teext =[[
 *⌯~⪼ مسح قائمه العام*
 *⌯~⪼ جلب نسخه الاحتياطيه*
 *⌯~⪼ رفع نسخه الاحتياطيه*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ المتجر* 
 *⌯~⪼ متجر الملفات*
 *⌯~⪼ الملفات*
 *⌯~⪼ مسح الملفات*
 *⌯~⪼ تعطيل + تفعيل + اسم ملف*
- *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+ *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اذاعه خاص*
 *⌯~⪼ اذاعه*
 *⌯~⪼ اذاعه بالتوجيه*
 *⌯~⪼ اذاعه بالتوجيه خاص*
 *⌯~⪼ اذاعه بالتثبيت*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ جلب نسخه الاحتياطيه*
 *⌯~⪼ رفع نسخه احتياطيه*
 *⌯~⪼ ضع عدد الاعضاء + العدد*
@@ -10773,22 +10773,22 @@ local Teext =[[
 *⌯~⪼ اضف/حذف رد للكل*
 *⌯~⪼ ردود المطور*
 ⌯~⪼ مسح ردود المطور*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الاشتراك الاجباري*
 *⌯~⪼ تعطيل الاشتراك الاجباري*
 *⌯~⪼ تفعيل الاشتراك الاجباري*
 *⌯~⪼ حذف رساله الاشتراك*
 *⌯~⪼ تغير رساله الاشتراك*
 *⌯~⪼ تغير الاشتراك*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الاحصائيات*
 *⌯~⪼ المشتركين*
 *⌯~⪼ المجموعات* 
 *⌯~⪼ تفعيل/تعطيل المغادره*
 *⌯~⪼ تنظيف المشتركين*
 *⌯~⪼ تنظيف الجروبات*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10797,7 +10797,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10810,32 +10810,32 @@ end
 local Teext =[[
 *⌯~⪼ اهلا بك عزيزي √*
 *⌯~⪼ اوامر الاعضاء كتالي…↓*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ عرض معلوماتك ↑↓*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ ايديي ← اسمي* 
 *⌯~⪼ تفاعلي اليوم ← تفاعله اليوم*
 *⌯~⪼ رسايلي ← مسح رسايلي* 
 *⌯~⪼ رتبتي ← سحكاتي* 
 *⌯~⪼ مسح سحكاتي ← المنشئ* 
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اوآمر المجموعه ↑↓*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ الرابط ← القوانين – الترحيب*
 *⌯~⪼ ايدي ← اطردني* 
 *⌯~⪼ اسمي ← المطور*  
 *⌯~⪼ كشف ~ بالرد بالمعرف*
-  *ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+  *ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ اسم البوت + الامر ↑↓*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯~⪼ بوسه بالرد* 
 *⌯~⪼ مصه بالرد*
 *⌯~⪼ رزله بالرد* 
 *⌯~⪼ شنو رئيك بهذا بالرد*
 *⌯~⪼ شنو رئيك بهاي بالرد*
 *⌯~⪼ تحب هذا*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM)
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10844,7 +10844,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '-𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10856,7 +10856,7 @@ return false
 end
 local Teext =[[
 *اهلا انتツفي اوامر البوت*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
 *⌯م1 ◂ اوامر الحمايه*
 *⌯م2 ◂ اوامر تعطيل ~ تفعيل*
 *⌯م3 ◂ اوامر ضع ~ اضف*
@@ -10867,8 +10867,8 @@ local Teext =[[
 *⌯م8 ◂ اوامر مطور البوت*
 *⌯م9 ◂ اوامر مطور الاساسي* 
 *⌯م10 ◂ اوامر الاعضاء*
-*ٴ•━━━━━━ 𝗧𝗘 ━━━━━━━•*
-[⍆ 𝘛𝘌𝘓𝘈𝘕𝘋 𝘛𝘦𝘈𝘮](t.me/TELANDTEAM) 
+*ٴ•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*
+[⍆ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔](t.me/X_G_33) 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10876,7 +10876,7 @@ keyboard.inline_keyboard = {
 {{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
-{{text = '𝑇𝐸𝐿𝐴𝑁𝐷 𝑇𝐸𝐴𝑀', url="t.me/TELANDTEAM"}},
+{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔', url="t.me/X_G_33"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -11454,7 +11454,7 @@ end
 if #list == 0 then
 t = " *⌯︙لا يوجد ادمن*"
 end
-send(msg.chat_id_,0,''..t..'\n*•━━━━━━ 𝗧𝗘 ━━━━━━━•*\n*⌯︙تم التعديل على الميديا*\n*⌯︙الشخص الي قام بالتعديل*\n*⌯︙ايدي الشخص ◂ '..result.sender_user_id_..'*\n*⌯︙معرف الشخص»{ '..users..' }*') 
+send(msg.chat_id_,0,''..t..'\n*•━━━━━━ 𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔  ━━━━━━━•*\n*⌯︙تم التعديل على الميديا*\n*⌯︙الشخص الي قام بالتعديل*\n*⌯︙ايدي الشخص ◂ '..result.sender_user_id_..'*\n*⌯︙معرف الشخص»{ '..users..' }*') 
 end,nil)
 DeleteMessage(msg.chat_id_,{[0] = msg.message_id_}) 
 end
