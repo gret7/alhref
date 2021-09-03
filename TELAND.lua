@@ -1217,7 +1217,7 @@ keyboard.inline_keyboard = {
 {text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""},
 },
 {
-{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"}
+{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudo.UserName.."?startgroup=new"}
 },
 }
 local msg_id = msg.id_/2097152/0.5
