@@ -1140,7 +1140,7 @@ local Text = '✹انت الان المطور الاساسي في البوت \n 
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName}}, 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"}}, 
+{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile('TELAND.lua').botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
