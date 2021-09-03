@@ -1217,7 +1217,7 @@ keyboard.inline_keyboard = {
 {text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""},
 },
 {
-{text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"},
+{text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..botUserName.."?startgroup=start"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
