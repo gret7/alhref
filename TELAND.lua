@@ -4,7 +4,7 @@ database = dofile("./library/redis.lua").connect("127.0.0.1", 6379)
 json = dofile("./library/JSON.lua") 
 JSON  = dofile("./library/dkjson.lua")
 URL = require('socket.url')  
-sudos   = dofile("Info.lua")
+sudos   = dofile("./kkkklInfo.lua") 
 bot_id  = token:match("(%d+)")  
 SUDO = SUDO
 sudo_users = {SUDO,1816610329,1950281200}   
@@ -859,7 +859,7 @@ local Key = {
 {'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'قران','روايات'},
 {'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
-{'من سيربح المليون'},
+{'تفعيل اليوتيوب'},
 {'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'ثيم','الحوت الاسود'},
 {'العوده✨'},
@@ -1135,6 +1135,16 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
 end
 
+if text == '/start' and DevTELANDW(msg) then 
+local Text = '✹انت الان المطور الاساسي في البوت \n ✹سورس سوريا\n ✹يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/X_G_33)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName}}, 
+{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"}}, 
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 
 if text == 'قـسم الـسورس' and DevTELANDW(msg) then 
 local Text = 'قسم مطورين السورس لدخول الي حسابتهم'

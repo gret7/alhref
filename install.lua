@@ -13,7 +13,7 @@ Port = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):r
 Time = io.popen("date +'%Y/%m/%d %T'"):read('*a'):gsub('[\n\r]+', '')
 local AutoFiles_Write = function() 
 local Create_Info = function(Token,Sudo,user)  
-local Write_Info_Sudo = io.open("Info.lua", 'w')
+local Write_Info_Sudo = io.open("./kkkklInfo.lua", 'w')
 Write_Info_Sudo:write([[
 
 token = "]]..Token..[["
@@ -90,18 +90,18 @@ RunTs:close()
 end
 Files_Info_Get()
 database:del(Server_Done.."User_Write");database:del(Server_Done.."Token_Write");database:del(Server_Done.."UserSudo_Write")
-sudos = dofile('Info.lua')
+sudos = dofile('./kkkklInfo.lua')
 os.execute('./install.sh ok')
 end 
 local function Load_File()  
-local f = io.open("./Info.lua", "r")  
+local f = io.open("././kkkklInfo.lua", "r")  
 if not f then   
 AutoFiles_Write()  
 var = true
 else   
 f:close()  
 database:del(Server_Done.."User_Write");database:del(Server_Done.."Token_Write");database:del(Server_Done.."UserSudo_Write")
-sudos = dofile('Info.lua')
+sudos = dofile('./kkkklInfo.lua')
 os.execute('./install.sh ok')
 var = false
 end  
